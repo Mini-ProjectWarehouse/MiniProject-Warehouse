@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../images/Logo-modified.png">
+  <title>Neon Snake & Ladder Mini Game - Multiplayer</title>
+ 
+</head>
+<body>
+  <h1>🎲 Neon Snake & Ladder Mini Game</h1>
+
+  <div class="game-container">
+    <!-- Board Left -->
+    <div id="board" class="board"></div>
+    
+
+    <!-- Right Panel: Dice + Controls -->
+    <div class="right-panel">
+      <div id="diceContainer" title="Dice"></div>
+      <button id="rollDiceBtn">Roll Dice 🎲</button>
+      <p id="diceResult">Dice: -</p>
+      <p id="playersPositions">Player 1 Position: 1 | Player 2 Position: 1</p>
+      <p id="currentTurn">Current Turn: Player 1</p>
+    </div>
+    
+  </div>
+
+  <!-- Custom Alert -->
+  <div id="customAlert"></div>
+
+  <!-- Sounds -->
+  <audio id="soundDice" src="./sound/dice_roll.mp3"></audio>
+  <audio id="soundTrap" src="./sound/trap_sound.mp3"></audio>
+  <audio id="soundBoost" src="./sound/boost_sound.mp3"></audio>
+  <audio id="soundWin" src="./sound/win_sound.mp3"></audio>
+
+  <script src="./script.js"></script>
+</body>
+</html>

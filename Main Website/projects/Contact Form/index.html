@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header-container">
+        <button type="button" class="go-back-btn" onclick="history.back()"><i class="fa fa-arrow-left"></i> Go Back</button>
+        <div class="theme-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+                <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+            </svg>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle" aria-label="Toggle Dark Mode" />
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="contact-container">
+        <div class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                 <input type="hidden" name="access_key" value="71b12f7c-dcc5-4316-bed6-550e7472fca4">
+                <input type="text" placeholder="Your Name" name="name" required />
+                <input type="email" placeholder="Your Email" name="email" required />
+                <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
+                <button type="submit" class="submit-btn">
+                    Submit <span class="arrow">→</span>
+                </button>
+            </form>
+        </div>
+        <div class="contact-right">
+            <img src="form.png" alt="Contact Illustration" class="contact-image" />
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const themeToggle = document.getElementById("theme-toggle");
+
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+                themeToggle.checked = true;
+            }
+
+            themeToggle.addEventListener("change", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("theme", themeToggle.checked ? "dark" : "light");
+            });
+        });
+    </script>
+</body>
+</html>

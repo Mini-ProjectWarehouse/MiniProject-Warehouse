@@ -1,0 +1,41 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(to bottom right, #0f0f0f, #625f5f);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    canvas {
+      border: 2px solid white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff00;
+      background-color: #000;
+    }
+    button, select {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: grey;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #gameOverBox {
+      position: absolute;
+      background-color: rgb(17, 102, 214);
+      color: white;
+      padding: 30px;
+      border: 2px solid grey;
+      border-radius: 10px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }

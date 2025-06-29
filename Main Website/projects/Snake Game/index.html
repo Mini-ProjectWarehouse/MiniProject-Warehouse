@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Snake Game - Upgraded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+  </style>
+</head>
+<body>
+
+  <h1>Snake Game</h1>
+  
+  <label for="difficulty">Select Difficulty:</label>
+  <select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+    <option value="extreme">Extreme</option>
+  </select>
+  <button onclick="startGame()">Play music</button>
+  <button onclick="stopMusic()">Stop Music</button>
+  <!-- man you would not belive us if we say there is such of way of putting sound in the ame but at first we try to use js and it give us the headake for days until we find this simple methos to add sound
+   -->
+  <p>Score: <span id="score_display">0</span></p>
+
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <button onclick="restartGame()">Restart Game</button>
+
+  <div id="gameOverBox">
+    <h2>💀 Game Over!</h2>
+    <p>Your Score: <span id="finalScore"></span></p>
+    <button onclick="restartGame()">Play Again</button>
+  </div>
+
+  <!-- SOUND FILES -->
+  <audio id="eatSound" src="./sound/eating-sound-effect-36186.mp3"></audio>
+  <audio id="gameOverSound" src="./sound/game_over.mp3"></audio>
+  <audio id="bgMusic" src="./sound/background.mp3" loop autoplay></audio>
+  <!-- hey if you want to change the sound you can just change the src of the audio tag and it will work as eay as that  -->
+
+  
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+			background-color: black;
+		}
+
+		#pacman {
+			height: 470px;
+			width: 382px;
+			border-radius: 5px;
+			margin: 20px auto;
+		}
+
+		#pauseButton {
+			display: block;
+			margin: 10px auto;
+			font-size: 16px;
+			padding: 8px 16px;
+			background-color: #ffcc00;
+			color: #000;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		#pauseButton:hover {
+			background-color: #ffaa00;
+		}
+
+		#shim {
+			font-family: 'Permanent Marker', cursive;
+			position: absolute;
+			visibility: hidden
+		}
+
+		h1 {
+			font-family: 'Permanent Marker', cursive;
+			text-align: center;
+			color: yellow;
+		}
+
+		body {
+			width: 342px;
+			margin: 0px auto;
+			font-family: sans-serif;
+		}
+
+		p {
+			text-decoration: none;
+			color: #0000FF;
+		}

@@ -1,0 +1,276 @@
+ 
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px;
+      user-select: none;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 900;
+      text-shadow:
+        0 0 8px #00fff7,
+        0 0 16px #00fff7,
+        0 0 32px #00fff7;
+    }
+
+    /* Main game container: board left, dice + controls right */
+    .game-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Board styling */
+    .board {
+      display: grid;
+      grid-template-columns: repeat(10, 44px);
+      grid-template-rows: repeat(10, 44px);
+      gap: 3px;
+      background: #111;
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow:
+        0 0 20px #00fff7aa,
+        inset 0 0 15px #00fff7aa;
+      position: relative;
+      user-select: none;
+    }
+
+    /* Cells */
+    .cell {
+      width: 44px;
+      height: 44px;
+      background: #222;
+      border-radius: 6px;
+      border: 1.5px solid #004f4f;
+      color: #bbb;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .trap {
+      background: #330000;
+      border-color: #ff0044;
+      box-shadow:
+        0 0 8px #ff0044aa,
+        0 0 14px #ff0044cc;
+      color: #ff4c6e;
+      font-weight: 700;
+    }
+
+    .boost {
+      background: #003300;
+      border-color: #00ff88;
+      box-shadow:
+        0 0 8px #00ff88aa,
+        0 0 14px #00ff88cc;
+      color: #75ffad;
+      font-weight: 700;
+    }
+
+    /* Player tokens */
+    .player-token {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      color: #000;
+      font-weight: 900;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      pointer-events: none;
+      text-shadow: 0 0 6px;
+      transition: top 0.4s ease, left 0.4s ease;
+      z-index: 10;
+    }
+
+    .player1 {
+      background: #00fff7;
+      box-shadow:
+        0 0 8px #00fff7,
+        0 0 18px #00fff7aa;
+      text-shadow: 0 0 6px #004040;
+    }
+
+    .player2 {
+      background: #ff4cff;
+      box-shadow:
+        0 0 8px #ff4cff,
+        0 0 18px #ff4cffaa;
+      text-shadow: 0 0 6px #440044;
+    }
+
+    /* Right panel with dice and controls */
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      min-width: 220px;
+      user-select: none;
+    }
+
+    button#rollDiceBtn {
+      padding: 12px 28px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      background: #00fff7;
+      color: #004040;
+      box-shadow:
+        0 0 12px #00fff7,
+        0 0 30px #00fff7aa;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    button#rollDiceBtn:hover:not(:disabled) {
+      background: #00d4cc;
+      box-shadow:
+        0 0 20px #00d4cc,
+        0 0 40px #00d4ccbb;
+    }
+
+    button#rollDiceBtn:disabled {
+      background: #004040;
+      cursor: not-allowed;
+      box-shadow: none;
+      color: #888;
+    }
+
+    /* Info text */
+    #diceResult, #playersPositions, #currentTurn {
+      font-weight: 700;
+      font-size: 18px;
+      text-shadow:
+        0 0 5px #00fff7,
+        0 0 10px #00fff7aa;
+      min-height: 28px;
+      user-select: none;
+    }
+
+    /* Custom alert box */
+    #customAlert {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 255, 255, 0.9);
+      color: #003333;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px 28px;
+      border-radius: 40px;
+      box-shadow:
+        0 0 15px #00fff7,
+        0 0 35px #00fff7aa;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+      user-select: none;
+      filter: drop-shadow(0 0 5px #00fff7);
+    }
+
+    #customAlert.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Dice container with 3D perspective */
+    #diceContainer {
+      width: 80px;
+      height: 80px;
+      perspective: 600px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Dice 3D cube */
+    .dice-cube {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+      margin: 0 auto;
+    }
+
+    /* Dice faces */
+    .face {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #004040;
+      border: 3px solid #00fff7;
+      border-radius: 16px;
+      box-shadow: inset 0 0 25px #00fff7aa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .face-front  { transform: translateZ(40px); }
+    .face-back   { transform: rotateY(180deg) translateZ(40px); }
+    .face-right  { transform: rotateY(90deg) translateZ(40px); }
+    .face-left   { transform: rotateY(-90deg) translateZ(40px); }
+    .face-top    { transform: rotateX(90deg) translateZ(40px); }
+    .face-bottom { transform: rotateX(-90deg) translateZ(40px); }
+
+    /* Dice dots */
+    .dot {
+      background: #00fff7;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #00fff7;
+      position: absolute;
+    }
+
+    /* Dot sizes */
+    .dot-small {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Dot positions */
+    .top-left    { top: 20%; left: 20%; }
+    .top-center  { top: 20%; left: 50%; transform: translateX(-50%); }
+    .top-right   { top: 20%; right: 20%; }
+
+    .middle-left  { top: 50%; left: 20%; transform: translateY(-50%); }
+    .middle-center{ top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .middle-right { top: 50%; right: 20%; transform: translateY(-50%); }
+
+    .bottom-left  { bottom: 20%; left: 20%; }
+    .bottom-center{ bottom: 20%; left: 50%; transform: translateX(-50%); }
+    .bottom-right { bottom: 20%; right: 20%; }
+  

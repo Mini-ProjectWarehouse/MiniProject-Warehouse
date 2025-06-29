@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clean Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="../images/Logo-modified.png">
+</head>
+<body>
+  <audio id="click_sound" src="./sound/click_sound.mp3"></audio>
+  <div id="game">
+    <div id="board" class="board">
+      <div class="cell" id="cell1" data-index="0"></div>
+      <div class="cell" id="cell2" data-index="1"></div>
+      <div class="cell" id="cell3" data-index="2"></div>
+      <div class="cell" id="cell4" data-index="3"></div>
+      <div class="cell" id="cell5" data-index="4"></div>
+      <div class="cell" id="cell6" data-index="5"></div>
+      <div class="cell" id="cell7" data-index="6"></div>
+      <div class="cell" id="cell8" data-index="7"></div>
+      <div class="cell" id="cell9" data-index="8"></div>
+    </div>
+    <div id="winnerMessage" class="winner-message"></div>
+    <div id="status" class="status"></div>
+    <button id="restartButton">Restart Game</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

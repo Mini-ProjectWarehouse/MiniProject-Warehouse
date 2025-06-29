@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Category Filter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="../images/Logo-modified.png">
+</head>
+<body>
+  <h2>Dynamic Filter by Category</h2>
+  <div class="filter-buttons" role="group" aria-label="Filter items by category">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter-btn" data-filter="fruit" aria-pressed="false">Fruit</button>
+    <button class="filter-btn" data-filter="vegetable" aria-pressed="false">Vegetable</button>
+    <button class="filter-btn" data-filter="bakery" aria-pressed="false">Bakery</button>
+  </div>
+
+  <div class="items-container">
+    <div class="item" data-container="fruit" tabindex="0">
+      <img src="images/apple.png" alt="Fresh red apple" />
+      <h4>Apple</h4>
+      <p>Rs. 120/kg</p>
+    </div>
+    <div class="item" data-container="fruit" tabindex="0">
+      <img src="images/banana.png" alt="Ripe banana" />
+      <h4>Banana</h4>
+      <p>Rs. 90/kg</p>
+    </div>
+    <div class="item" data-container="vegetable" tabindex="0">
+      <img src="images/carrot.png" alt="Orange carrot" />
+      <h4>Carrot</h4>
+      <p>Rs. 60/kg</p>
+    </div>
+    <div class="item" data-container="vegetable" tabindex="0">
+      <img src="images/broccoli.png" alt="Fresh broccoli" />
+      <h4>Broccoli</h4>
+      <p>Rs. 150/kg</p>
+    </div>
+    <div class="item" data-container="fruit" tabindex="0">
+      <img src="images/strawberry.png" alt="Fresh strawberries" />
+      <h4>Strawberry</h4>
+      <p>Rs. 250/kg</p>
+    </div>
+    <div class="item" data-container="vegetable" tabindex="0">
+      <img src="images/eggplant.png" alt="Purple eggplant" />
+      <h4>Eggplant</h4>
+      <p>Rs. 70/kg</p>
+    </div>
+    <div class="item" data-container="bakery" tabindex="0">
+      <img src="images/bread.png" alt="Loaf of bread" />
+      <h4>Bread</h4>
+      <p>Rs. 50/loaf</p>
+    </div>
+    <div class="item" data-container="bakery" tabindex="0">
+      <img src="images/cake.png" alt="Chocolate cake slice" />
+      <h4>Cake</h4>
+      <p>Rs. 400/piece</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #282c34;
+  color: #fff;
+}
+
+#game {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 0;
+  gap: 0;
+  position: relative;
+  width: 304px;
+  height: 304px;
+}
+
+.board::before {
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.board::after {
+  top: 204px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.cell {
+  background: #282c34;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 0;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  color: #61dafb;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.board.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+.winner-message {
+  font-size: 48px;
+  color: #61dafb;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  user-select: none;
+  min-height: 60px;
+}
+
+.winner-message.fade-in {
+  animation-name: fadeIn;
+  visibility: visible;
+}
+
+.status {
+  font-size: 24px;
+  margin-bottom: 20px;
+  min-height: 30px;
+}
+
+#restartButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#restartButton:hover {
+  background-color: #21a1f1;
+}
+
+#cell1{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+}
+#cell2{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+}
+#cell3{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+#cell4{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+}
+#cell5{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+}
+#cell6{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+#cell7{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+#cell8{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+#cell9{
+  border: 5px solid #61dafb;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}

@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.page-title {
+  padding: 20px;
+  font-size: 2rem;
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  background-color: #f5faff;
+}
+
+.card {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.avatar {
+  width: 100%;
+  height: 180px;
+  background-color: #333;
+  color: #fff;
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.card h1 {
+  font-size: 22px;
+  margin: 10px 0 5px;
+}
+
+.card .title {
+  font-size: 16px;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.card .description {
+  font-size: 14px;
+  color: #555;
+  margin: 0 20px 15px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.card .social-links {
+  margin: 15px 0;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #000;
+}
+
+
+.go-back-btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.go-back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}

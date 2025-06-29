@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Color Fill Game with Levels and Art Challenges</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../images/Logo-modified.png">
+</head>
+<body>
+  <h1 class="main_game_title">Color Fill Game</h1>
+
+  <div class="main_menu" role="menu" aria-label="Main menu" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <button id="prevLevel" aria-label="Previous level" style="font-size: 1.5rem; padding: 0.5rem 1rem; cursor: pointer;">&#8592;</button>
+      <div id="currentLevelDisplay" style="font-weight: bold; font-size: 1.2rem; width: 120px; text-align: center;">Level 1</div>
+      <button id="nextLevel" aria-label="Next level" style="font-size: 1.5rem; padding: 0.5rem 1rem; cursor: pointer;">&#8594;</button>
+    </div>
+      <button id="startLevelButton" style="padding: 0.5em 1em; font-size: 1.1rem; border-radius: 6px; border: 1px solid #666; background-color: #e0e0e0; cursor: pointer; font-weight: bold; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); max-width: 200px; width: 100%;">Start Level</button>
+  </div>
+
+  <div style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+    <div class="game_container" hidden>
+      <div class="controls">
+        <div class="scoreboard" aria-live="polite">Score: 0</div>
+        <button id="resetButton" aria-label="Reset game grid colors">Reset Grid</button>
+      </div>
+      <div class="instruction" aria-live="polite"></div>
+      <div style="display: flex; justify-content: center; align-items: flex-start; gap: 1rem;">
+        <div class="main_game_box" role="grid" aria-label="Color fill game grid"></div>
+        <div class="game_color_picker" id="colorPicker" role="list" aria-label="Color picker" style="flex-direction: column; width: 160px; gap: 0.5rem;"></div>
+      </div>
+      <div class="message" aria-live="polite"></div>
+    </div>
+    <div id="artExample" aria-label="Example art to replicate" style="width: 160px; height: 160px; border: 2px solid #444; background: white; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); gap: 2px;">
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
